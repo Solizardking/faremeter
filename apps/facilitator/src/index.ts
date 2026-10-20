@@ -14,9 +14,11 @@ import { configureApp } from "@faremeter/logs";
 
 await configureApp();
 
+const solanaNetwork = process.env.SOLANA_NETWORK ?? "devnet";
+
 const solanaHandlers =
   (await argsFromEnv(["ADMIN_KEYPAIR_PATH"], (...envVars) =>
-    solana.createHandlers("devnet", ...envVars),
+    solana.createHandlers(solanaNetwork, ...envVars),
   )) ?? [];
 
 const evmHandlers =

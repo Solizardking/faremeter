@@ -23,12 +23,21 @@ export async function createHandlers(network: string, keypairPath: string) {
     process.exit(1);
   }
 
+  if (network === "clawd") {
+    logger.info(
+      "Network 'clawd' has no known SPL tokens; x402 handlers are " +
+        "unavailable there. Clawd Chain payments are served by " +
+        "apps/clawd-payments (MPP charge, native asset).",
+    );
+    return [];
+  }
+
   const handlers: FacilitatorHandler[] = [];
   const secretKey = Uint8Array.from(
     JSON.parse(fs.readFileSync(keypairPath, "utf-8")),
   );
   const adminSigner = await createKeyPairSignerFromBytes(secretKey);
-  const apiUrl = clusterRpcUrls[network];
+  const apiUrl = process.env.SOLANA_RPC_URL ?? clusterRpcUrls[network];
   if (!apiUrl) {
     throw new Error(`No RPC URL for cluster ${network}`);
   }
