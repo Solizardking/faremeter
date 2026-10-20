@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "@faremeter/info": "workspace:^",
+    "@faremeter/logs": "workspace:^",
+    "@faremeter/middleware": "workspace:^",
+    "@faremeter/payment-solana": "workspace:^",
+    "@faremeter/types": "workspace:^",
+    "@hono/node-server": "catalog:",
+    "@solana/kit": "catalog:",
+    "dotenv": "catalog:",
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "@tapjs/tsx": "catalog:",
+    "tap": "catalog:",
+    "tsc-esm-fix": "catalog:",
+    "tsx": "catalog:",
+    "typescript-language-server": "catalog:"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "GPL-3.0-only",
+  "packageManager": "pnpm@10.12.1",
+  "private": true,
+  "tap": {
+    "plugin": [
+      "@tapjs/tsx",
+      "!@tapjs/typescript"
+    ]
+  },
+  "type": "module"
+}
