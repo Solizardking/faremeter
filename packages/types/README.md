@@ -541,9 +541,9 @@ True if the value matches the base58 address format
 
 Type guard that checks if a value is a valid Solana cluster name.
 
-| Function          | Type                                                                   |
-| ----------------- | ---------------------------------------------------------------------- |
-| `isSolanaCluster` | `(maybe: unknown) => maybe is "mainnet-beta" or "devnet" or "testnet"` |
+| Function          | Type                                                                              |
+| ----------------- | --------------------------------------------------------------------------------- |
+| `isSolanaCluster` | `(maybe: unknown) => maybe is "mainnet-beta" or "devnet" or "testnet" or "clawd"` |
 
 Parameters:
 
@@ -893,9 +893,9 @@ Validator for Solana base58-encoded addresses.
 
 Validator for Solana cluster names.
 
-| Constant        | Type                                                |
-| --------------- | --------------------------------------------------- |
-| `SolanaCluster` | `Type<"mainnet-beta" or "devnet" or "testnet", {}>` |
+| Constant        | Type                                                           |
+| --------------- | -------------------------------------------------------------- |
+| `SolanaCluster` | `Type<"mainnet-beta" or "devnet" or "testnet" or "clawd", {}>` |
 
 ### SolanaCAIP2NetworkString
 
