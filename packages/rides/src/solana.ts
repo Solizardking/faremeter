@@ -23,12 +23,14 @@ const clusterRpcUrls: Record<KnownCluster, string> = {
   "mainnet-beta": "https://api.mainnet-beta.solana.com",
   devnet: "https://api.devnet.solana.com",
   testnet: "https://api.testnet.solana.com",
+  clawd: "https://rpc.clawdchain.trade",
 };
 
 const networkAliases = new Map<string, KnownCluster>(
   Object.entries({
     solana: "mainnet-beta",
     "solana-devnet": "devnet",
+    "solana-clawd": "clawd",
   } as const),
 );
 

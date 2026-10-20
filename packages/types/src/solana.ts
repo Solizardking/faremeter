@@ -20,7 +20,9 @@ export function isBaseAddress(maybe: unknown): maybe is Base58Address {
 /**
  * Validator for Solana cluster names.
  */
-export const SolanaCluster = type("'mainnet-beta' | 'devnet' | 'testnet'");
+export const SolanaCluster = type(
+  "'mainnet-beta' | 'devnet' | 'testnet' | 'clawd'",
+);
 export type SolanaCluster = typeof SolanaCluster.infer;
 
 /**

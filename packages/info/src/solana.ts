@@ -39,6 +39,11 @@ export const SOLANA_TESTNET = createSolanaNetwork(
   "testnet",
 );
 
+export const SOLANA_CLAWD = createSolanaNetwork(
+  "solana:7nu7q65M7dhJu9j6Zo1XkL4VRfMdg854",
+  "clawd",
+);
+
 type NamedSolanaNetwork = SolanaCAIP2Network & { readonly name: SolanaCluster };
 
 type KnownSolanaNetworkInfo = {
@@ -58,6 +63,10 @@ const knownSolanaNetworks: Record<string, KnownSolanaNetworkInfo> = {
   [SOLANA_TESTNET.caip2]: {
     network: SOLANA_TESTNET as NamedSolanaNetwork,
     legacyNetworkIds: ["solana-testnet"],
+  },
+  [SOLANA_CLAWD.caip2]: {
+    network: SOLANA_CLAWD as NamedSolanaNetwork,
+    legacyNetworkIds: ["solana-clawd"],
   },
 };
 
